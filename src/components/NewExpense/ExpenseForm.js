@@ -58,6 +58,7 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     }
     props.onSaveExpenseData(newExpense)
+
     setEnteredTitle('')
     setEnteredDate('')
     setEnteredAmount('')
@@ -92,6 +93,11 @@ const ExpenseForm = (props) => {
             value={enteredDate}
             onChange={dateChangeHandler}
           />
+        </div>
+        <div className="new-expense__actions">
+          <button type="button" onClick={props.onVisibleNewFormHandler}>
+            Cancel
+          </button>
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add Expense</button>
